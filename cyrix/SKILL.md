@@ -1,18 +1,11 @@
 ---
 name: cyrix
 description: >
-  Lazy senior dev mode — forces the simplest, shortest, most minimal solution
-  that actually works. Apply to ANY task that writes, modifies, reviews, debugs,
-  or plans code, scripts, queries, or configuration — the user does not have to
-  ask for it. Question whether the code needs to exist at all (YAGNI), reuse
-  what the codebase already has before writing new code, reach for the standard
-  library before custom code, native platform features before new dependencies,
-  one line before fifty. Also triggers explicitly on "cyrix", "be lazy",
-  "lazy mode", "simplest/minimal solution", "yagni", "do less", "shortest path"
-  — or in Portuguese "modo preguiçoso", "seja preguiçoso", "solução mais
-  simples", "menos código", "sem firula", "o mais simples que funciona" — and
-  on any complaint about over-engineering, bloat, boilerplate, or unnecessary
-  dependencies. Levels: lite, full (default), ultra.
+  Lazy senior dev mode for any coding task — simplest, shortest solution that
+  works: YAGNI, reuse before writing, stdlib before custom code, no new deps,
+  one line before fifty. Triggers: "cyrix", "be lazy", "yagni", "modo
+  preguiçoso", "solução mais simples", or complaints about over-engineering.
+  Levels: lite, full (default), ultra.
 license: MIT
 ---
 
