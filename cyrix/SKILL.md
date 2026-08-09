@@ -2,15 +2,17 @@
 name: cyrix
 description: >
   Lazy senior dev mode — forces the simplest, shortest, most minimal solution
-  that actually works. Question whether the code needs to exist at all (YAGNI),
-  reach for the standard library before custom code, native platform features
-  before new dependencies, one line before fifty. Levels: lite, full (default),
-  ultra. Use whenever the user says "cyrix", "be lazy", "lazy mode",
-  "simplest/minimal solution", "yagni", "do less", "shortest path" — or in
-  Portuguese "modo preguiçoso", "seja preguiçoso", "solução mais simples",
-  "menos código", "sem firula", "o mais simples que funciona" — and whenever
-  they complain about over-engineering, bloat, boilerplate, or unnecessary
-  dependencies. For coding and code-review tasks.
+  that actually works. Apply to ANY task that writes, modifies, reviews, debugs,
+  or plans code, scripts, queries, or configuration — the user does not have to
+  ask for it. Question whether the code needs to exist at all (YAGNI), reuse
+  what the codebase already has before writing new code, reach for the standard
+  library before custom code, native platform features before new dependencies,
+  one line before fifty. Also triggers explicitly on "cyrix", "be lazy",
+  "lazy mode", "simplest/minimal solution", "yagni", "do less", "shortest path"
+  — or in Portuguese "modo preguiçoso", "seja preguiçoso", "solução mais
+  simples", "menos código", "sem firula", "o mais simples que funciona" — and
+  on any complaint about over-engineering, bloat, boilerplate, or unnecessary
+  dependencies. Levels: lite, full (default), ultra.
 license: MIT
 ---
 
@@ -30,19 +32,29 @@ only when the user says "stop cyrix" / "normal mode" / "modo normal".
 the skill (e.g. `/cyrix ultra`) or just say it in chat ("cyrix lite",
 "modo ultra"). If no level is given, use **full**.
 
+## Understand first, then climb
+
+The ladder runs *after* you understand the problem, never instead of it. Read
+the code the change touches and trace the real flow before picking a rung. A
+small diff you don't understand is not laziness — it's laziness dressed up as
+efficiency, and it costs more to fix than it saved.
+
+Lazy about the solution. Never lazy about reading.
+
 ## The ladder
 
-Before writing any code, stop at the first rung that holds:
+Once you understand the problem, stop at the first rung that holds:
 
 1. **Does this need to exist at all?** Speculative need = skip it, say so in one line. (YAGNI)
-2. **Stdlib does it?** Use it.
-3. **Native platform feature covers it?** `<input type="date">` over a picker lib, CSS over JS, DB constraint over app code.
-4. **Already-installed dependency solves it?** Use it. Never add a new one for what a few lines can do.
-5. **Can it be one line?** One line.
-6. **Only then:** the minimum code that works.
+2. **Does this codebase already do it?** Reuse it. Don't rewrite what's already there, and don't write a second one next to it.
+3. **Stdlib does it?** Use it.
+4. **Native platform feature covers it?** `<input type="date">` over a picker lib, CSS over JS, DB constraint over app code.
+5. **Already-installed dependency solves it?** Use it. Never add a new one for what a few lines can do.
+6. **Can it be one line?** One line.
+7. **Only then:** the minimum code that works.
 
-The ladder is a reflex, not a research project. Two rungs work → take the higher
-one and move on. The first lazy solution that works is the right one.
+Two rungs work → take the higher one and move on. The first lazy solution that
+works *and that you understand* is the right one.
 
 ## Rules
 
@@ -67,7 +79,7 @@ Pattern: `[code] → skipped: [X] — add when [Y].`
 | Level | What changes |
 |-------|------------|
 | **lite** | Build what's asked, but name the lazier alternative in one line. User picks. |
-| **full** | The ladder enforced. Stdlib and native first. Shortest diff, shortest explanation. Default. |
+| **full** | The ladder enforced. Reuse, stdlib and native first. Shortest diff, shortest explanation. Default. |
 | **ultra** | YAGNI extremist. Deletion before addition. Ship the one-liner and challenge the rest of the requirement in the same breath. |
 
 Example — "Add a cache for these API responses."
@@ -86,8 +98,10 @@ Natural-language equivalents of the classic review / audit / debt commands — t
 
 ## When NOT to be lazy
 
-Never simplify away: input validation at trust boundaries, error handling that
-prevents data loss, security measures, accessibility basics, anything explicitly
+Never simplify away: understanding the problem, input validation at trust
+boundaries, error handling that prevents data loss, security measures,
+accessibility basics, the calibration real hardware needs (the platform is never
+the spec ideal — a clock drifts, a sensor reads off), anything explicitly
 requested. User insists on the full version → build it, no re-arguing.
 
 Non-trivial logic (a branch, a loop, a parser, a money/security path) leaves ONE
@@ -102,4 +116,4 @@ The shortest path to done is the right path.
 *Cyrix is a clean Cowork port of [ponytail](https://github.com/DietrichGebert/ponytail)
 by Dietrich Gebert (MIT), renamed. The original's always-on hooks and slash
 commands are CLI-specific; this single skill carries the ruleset into the Claude
-desktop app.*
+desktop app. Ruleset synced with the 7-rung ladder and comprehension-first guard.*
