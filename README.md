@@ -28,3 +28,4 @@ Type `/cyrix` (or say "modo preguiçoso" / "be lazy"). Levels:
 
 Ruleset by Dietrich Gebert ([ponytail](https://github.com/DietrichGebert/ponytail), MIT).
 This is a renamed port for the Claude desktop app.
+Ruleset synced with ponytail's 7-rung ladder and comprehension-first guard (Aug 2026).
